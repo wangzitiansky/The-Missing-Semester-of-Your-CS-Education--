@@ -6,4 +6,4 @@
 
 ##### [lecture 1 Course overview + the shell](https://missing.csail.mit.edu/2020/course-shell/)
 
-##### [lecture 1 习题解答](lecture1/readme)
+##### [lecture 1 习题解答](lecture1/readme.md)
