@@ -111,3 +111,49 @@ cd $dir
 
 ```
 </details>
+
+<details>
+    <summary>say you have a command that fails rarely</summary>
+
+### 题目详情
+
+Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.
+脚本如下
+```bash
+ #!/usr/bin/env bash
+
+ n=$(( RANDOM % 100 ))
+
+ if [[ n -eq 42 ]]; then
+    echo "Something went wrong"
+    >&2 echo "The error was using magic numbers"
+    exit 1
+ fi
+
+ echo "Everything went according to plan"
+```
+
+### 翻译
+
+你有一个经常失败的命令。为了debug你需要获得这个脚本的输出，但是这个脚本发生错误的时间不固定。你需要写一个bash脚本来监控这个脚本直到这个脚本运行错误了，并且把脚本输出和错误重定向到文件中。附加功能是能记录这个脚本跑了多少次才失败
+
+### 解答
+```bash
+#!/bin/bash
+cnt=1
+while true
+do
+    source wrong.sh > error.log 2>&1
+    if [ $? -eq 1 ]
+    then
+	    break
+    else
+	    echo "the shell runs good"
+    fi
+    echo "run $cnt times"
+    cnt=$[$cnt + 1]
+done
+
+```
+
+</details>
