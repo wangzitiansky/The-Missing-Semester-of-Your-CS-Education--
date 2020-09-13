@@ -2,12 +2,11 @@
 
 ### 习题
 
-<details>
-    <summary>write an ls command that lists files in the following manner</summary>
++ write an ls command that lists files in the following manner
 
 
 
-### 题目详情
+`题目详情`
 
 Read [`man ls`](http://man7.org/linux/man-pages/man1/ls.1.html) and write an `ls` command that lists files in the following manner
 
@@ -26,7 +25,7 @@ A sample output would look like this
  drwx------+ 47 user group 1.5K Jan 12 18:08 ..
 ```
 
-### 翻译
+`翻译`
 
 阅读 man ls 并且让ls命令按照如下条件输出
 
@@ -45,7 +44,7 @@ A sample output would look like this
  drwx------+ 47 user group 1.5K Jan 12 18:08 ..
 ```
 
-### 解答
+`解答`
 
 + 显示所有文件
 
@@ -79,21 +78,19 @@ drwxr-xr-x  5 sky sky 4096 5月  20 10:31 Downloads
 # 我这个本身就有颜色的
 ```
 
-</details>
-
-<details>
-    <summary>write bash functions marco and polo that do the following</summary>
++ write bash functions marco and polo that do the following
 
 
-### 题目详情
+`题目详情`
 
 write bash functions  `marco` and `polo` that do the following. Whenever you execute `marco` the current working directory should be saved in some manner, then when you execute `polo`, no matter what directory you are in, `polo` should `cd` you back to the directory where you executed `marco`. For ease of debugging you can write the code in a file `marco.sh` and (re)load the definitions to your shell by executing `source marco.sh`.
 
-### 翻译
+`翻译`
 
 写两个bash函数功能如下。当你运行marco，当前的工作目录会用某种方式保存，之后当你运行polo的时候，不论你当前在哪个目录，polo会cd回到运行marco的目录。为了方便debug你可以将代码写进marco.sh并且通过source marco.sh加载这个命令.
 
-### 解答
+`解答`
+
 marco脚本中要保留pwd命令的值
 polo脚本要cd到marco脚本保留到的变量中去
 
@@ -110,12 +107,10 @@ polo.sh
 cd $dir
 
 ```
-</details>
 
-<details>
-    <summary>say you have a command that fails rarely</summary>
++ say you have a command that fails rarely
 
-### 题目详情
+`题目详情`
 
 Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.
 脚本如下
@@ -133,11 +128,12 @@ Say you have a command that fails rarely. In order to debug it you need to captu
  echo "Everything went according to plan"
 ```
 
-### 翻译
+`翻译`
 
 你有一个经常失败的命令。为了debug你需要获得这个脚本的输出，但是这个脚本发生错误的时间不固定。你需要写一个bash脚本来监控这个脚本直到这个脚本运行错误了，并且把脚本输出和错误重定向到文件中。附加功能是能记录这个脚本跑了多少次才失败
 
-### 解答
+`解答`
+
 ```bash
 #!/bin/bash
 cnt=1
